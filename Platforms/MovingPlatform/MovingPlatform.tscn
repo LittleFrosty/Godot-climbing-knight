@@ -1,0 +1,79 @@
+[gd_scene load_steps=7 format=3 uid="uid://fnejr3158lo5"]
+
+[ext_resource type="Texture2D" uid="uid://byutdmmw6oqx4" path="res://Platforms/MovingPlatform/platform-long.png" id="1_1pwku"]
+
+[sub_resource type="Curve2D" id="Curve2D_3qk4s"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 172, 2)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2w0g"]
+size = Vector2(32.0053, 15.9997)
+
+[sub_resource type="Animation" id="Animation_de1wr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_h1ije"]
+resource_name = "movement"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.55, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eg8u0"]
+_data = {
+"RESET": SubResource("Animation_de1wr"),
+"movement": SubResource("Animation_h1ije")
+}
+
+[node name="MovingPlatform" type="Path2D"]
+curve = SubResource("Curve2D_3qk4s")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(118.887, 1.68757)
+rotation = 0.00588229
+progress = 116.884
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(118.887, 1.68757)
+rotation = 0.00588229
+
+[node name="Platform-long" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(-1.00586, -0.9941)
+rotation = -0.00588229
+texture = ExtResource("1_1pwku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-0.997041, -0.994101)
+shape = SubResource("RectangleShape2D_u2w0g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eg8u0")
+}

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cojd0xyc3imod"]
+
+[ext_resource type="Script" path="res://Interactables/Door/Door.gd" id="1_f1kd5"]
+[ext_resource type="Texture2D" uid="uid://dy60yhc631rip" path="res://Assets/door-opened.png" id="1_newra"]
+[ext_resource type="Texture2D" uid="uid://cmbvlqcilqik5" path="res://Assets/door.png" id="2_ccvx6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_847gp"]
+size = Vector2(12.8571, 31.4286)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyuwl"]
+size = Vector2(22, 31.7143)
+
+[node name="Door" type="Node2D"]
+scale = Vector2(1.4, 1.4)
+script = ExtResource("1_f1kd5")
+
+[node name="Opened" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_newra")
+
+[node name="Closed" type="Sprite2D" parent="."]
+texture = ExtResource("2_ccvx6")
+
+[node name="Colider" type="StaticBody2D" parent="."]
+
+[node name="AreaColider" type="CollisionShape2D" parent="Colider"]
+position = Vector2(0, 5.79016e-06)
+shape = SubResource("RectangleShape2D_847gp")
+debug_color = Color(0.694599, 0, 0.137215, 0.419608)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.142862)
+shape = SubResource("RectangleShape2D_hyuwl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -32.8571
+offset_top = 16.4286
+offset_right = 33.1429
+offset_bottom = 39.4286
+theme_override_colors/font_color = Color(1, 0.160784, 0.14902, 1)
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,15 @@
+DirectionalLight2D
+AudioStreamPlayer
+AudioStreamPlayer2D
+Sprite2D
+Label
+Control
+CanvasLayer
+ProgressBar
+TextureProgressBar
+AnimationPlayer
+CollisionShape2D
+RemoteTransform2D
+AnimatableBody2D
+PathFollow2D
+Path2D

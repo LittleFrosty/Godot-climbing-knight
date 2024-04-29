@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqjk3jh7k1vk"]
+
+[ext_resource type="Texture2D" uid="uid://dtp7wb4nawigw" path="res://Interactables/Star/gem.png" id="1_djy2o"]
+[ext_resource type="Script" path="res://Player/UI.gd" id="1_qrhod"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_qrhod")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 45.0
+offset_right = 334.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 28
+text = "x 3"
+
+[node name="Gem" type="Sprite2D" parent="Control"]
+position = Vector2(24, 21)
+scale = Vector2(2.56667, 2.42308)
+texture = ExtResource("1_djy2o")
+hframes = 5
