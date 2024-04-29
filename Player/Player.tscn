@@ -346,6 +346,7 @@ flip_h = true
 hframes = 10
 
 [node name="jumpProgress" type="ProgressBar" parent="Sprite2D"]
+visible = false
 offset_left = -10.0
 offset_top = 27.0
 offset_right = -6.0

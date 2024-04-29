@@ -1,2 +1,9 @@
 res://Main.tscn
 res://Interactables/Door/Door.gd
+res://Player/Player.tscn
+res://Interactables/Door/Door.tscn
+res://Interactables/Box/Box.tscn
+res://Platforms/MovingPlatform/MovingPlatform.tscn
+res://Player/UI.tscn
+res://Interactables/Star/Star.tscn
+res://Platforms/MovingPlatform/MovingPlatform.gd

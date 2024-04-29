@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cojd0xyc3imod"]
+[gd_scene load_steps=7 format=3 uid="uid://cojd0xyc3imod"]
 
 [ext_resource type="Script" path="res://Interactables/Door/Door.gd" id="1_f1kd5"]
 [ext_resource type="Texture2D" uid="uid://dy60yhc631rip" path="res://Assets/door-opened.png" id="1_newra"]
 [ext_resource type="Texture2D" uid="uid://cmbvlqcilqik5" path="res://Assets/door.png" id="2_ccvx6"]
+[ext_resource type="FontFile" uid="uid://bscja2nk4k0jq" path="res://Assets/fonts/PixelOperator8.ttf" id="4_ktu7i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_847gp"]
 size = Vector2(12.8571, 31.4286)
@@ -39,8 +40,10 @@ offset_left = -32.8571
 offset_top = 16.4286
 offset_right = 33.1429
 offset_bottom = 39.4286
-theme_override_colors/font_color = Color(1, 0.160784, 0.14902, 1)
-theme_override_font_sizes/font_size = 12
+theme_override_colors/font_color = Color(0.612902, 0.740408, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_ktu7i")
+theme_override_font_sizes/font_size = 8
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true

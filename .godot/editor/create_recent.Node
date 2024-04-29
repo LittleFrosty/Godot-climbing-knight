@@ -1,3 +1,10 @@
+CanvasModulate
+Timer
+AnimationPlayer
+Node
+Node2D
+CollisionShape2D
+AnimatableBody2D
 DirectionalLight2D
 AudioStreamPlayer
 AudioStreamPlayer2D
@@ -6,10 +13,3 @@ Label
 Control
 CanvasLayer
 ProgressBar
-TextureProgressBar
-AnimationPlayer
-CollisionShape2D
-RemoteTransform2D
-AnimatableBody2D
-PathFollow2D
-Path2D
