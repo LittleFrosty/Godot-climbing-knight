@@ -18,20 +18,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
-func _physics_process(delta) -> void:
-	var direction = Input.get_axis("left", "right")
-	jump();
-	animations();
+func _process(delta) -> void:
+	var direction = Input.get_axis("left", "right");
 	movements(delta,direction);
-	move_and_slide()
+	animations();
 	charge_jump();
+	move_and_slide()
 
 func _input(_event):
 	jump();
 	toggle_crouch_jump();
 
-func movements(delta:float,direction:int):
-	
+func movements(delta:float,direction:int) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	elif direction and can_move:
@@ -81,21 +79,21 @@ func animations() -> void:
 	else:
 		animation_player.play("idle");
 
-func change_speed(type:int) -> void:
-	if type == 1:
+func change_speed(direction:int) -> void:
+	if direction == 1:
 		# incrase speed going right
 		sprite_2d.flip_h = false;
 		sprite_2d.position.x = 4;
 		if (speed < maxSpeed):
 			speed += speed_increment;
-	elif type == -1:
+	elif direction == -1:
 		# incrase speed going left
 		sprite_2d.flip_h = true;
 		sprite_2d.position.x = -4;
 		
 		if (speed > -maxSpeed):
 			speed -= speed_increment;
-	elif type == 0:
+	elif direction == 0:
 		# If speed is positive, decrease speed until it reaches 0
 		if speed > 0:
 			speed -= speed_increment + 10

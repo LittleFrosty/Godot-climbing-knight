@@ -336,6 +336,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = -50
+z_as_relative = false
 script = ExtResource("1_4v363")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -347,6 +349,8 @@ hframes = 10
 
 [node name="jumpProgress" type="ProgressBar" parent="Sprite2D"]
 visible = false
+z_index = 10
+z_as_relative = false
 offset_left = -10.0
 offset_top = 27.0
 offset_right = -6.0
@@ -360,8 +364,9 @@ show_percentage = false
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
-rotation_smoothing_speed = 2.0
+position_smoothing_speed = 6.0
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 25)

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyq682xwxqeux"]
+
+[ext_resource type="Texture2D" uid="uid://42rk1ksu4iqt" path="res://Backgrounds/Forest/back.png" id="1_wmvuv"]
+[ext_resource type="Texture2D" uid="uid://ca5rrr5o8u4rc" path="res://Backgrounds/Forest/middle.png" id="2_1yl30"]
+
+[node name="ForestBackground" type="Node2D"]
+
+[node name="Back" type="Sprite2D" parent="."]
+position = Vector2(81, 136)
+texture = ExtResource("1_wmvuv")
+
+[node name="Back2" type="Sprite2D" parent="."]
+position = Vector2(241, 136)
+texture = ExtResource("1_wmvuv")
+
+[node name="Back3" type="Sprite2D" parent="."]
+position = Vector2(401, 136)
+texture = ExtResource("1_wmvuv")
+
+[node name="Back4" type="Sprite2D" parent="."]
+position = Vector2(561, 136)
+texture = ExtResource("1_wmvuv")
+
+[node name="Back5" type="Sprite2D" parent="."]
+position = Vector2(688, 136)
+texture = ExtResource("1_wmvuv")
+
+[node name="Middle" type="Sprite2D" parent="."]
+position = Vector2(192, 136)
+texture = ExtResource("2_1yl30")
+
+[node name="Middle2" type="Sprite2D" parent="."]
+position = Vector2(576, 136)
+texture = ExtResource("2_1yl30")

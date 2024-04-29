@@ -6,4 +6,5 @@ res://Interactables/Box/Box.tscn
 res://Platforms/MovingPlatform/MovingPlatform.tscn
 res://Player/UI.tscn
 res://Interactables/Star/Star.tscn
-res://Platforms/MovingPlatform/MovingPlatform.gd
+res://Backgrounds/Forest/ForestBackground.tscn
+res://Player/Movements.gd
