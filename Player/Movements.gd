@@ -18,7 +18,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var sprite_2d = $Sprite2D
 @onready var animation_player = $AnimationPlayer
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	var direction = Input.get_axis("left", "right");
 	movements(delta,direction);
 	animations();

@@ -362,10 +362,10 @@ fill_mode = 3
 show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+ignore_rotation = false
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
-rotation_smoothing_enabled = true
 rotation_smoothing_speed = 6.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

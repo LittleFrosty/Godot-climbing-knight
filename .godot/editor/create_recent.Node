@@ -1,9 +1,9 @@
+Node2D
 AnimationPlayer
 AnimationTree
 CanvasModulate
 Timer
 Node
-Node2D
 CollisionShape2D
 AnimatableBody2D
 DirectionalLight2D
