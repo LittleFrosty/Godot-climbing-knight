@@ -10,9 +10,12 @@ var speed_increment = 10;
 var maxSpeed = 200;
 var can_move = true;
 
-var jump_charged = 0;
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var jump_charged:float = 0.0;
 
+
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var charge_jump_audio = $chargeJumpAudio
+@onready var jump_audio = $jumpAudio
 @onready var jump_progress = $Sprite2D/jumpProgress
 @export var gems = 0;
 @onready var sprite_2d = $Sprite2D
@@ -42,6 +45,7 @@ func movements(delta:float,direction:int) -> void:
 func jump() -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_audio.play();
 	if (Input.is_action_just_pressed("left") || Input.is_action_just_pressed("right")):
 		speed = 0;
 
@@ -51,6 +55,7 @@ func toggle_crouch_jump() -> void:
 		speed = 0;
 	elif Input.is_action_just_released("charge_jump") and is_on_floor():
 		velocity.y = CROUCH_JUMP_VELOCITY * jump_charged
+		charge_jump_audio.play();
 		jump_progress.visible = false;
 		var currentMaxSpeed:int = (maxSpeed * jump_charged) * 1.2
 		if sprite_2d.flip_h == false:
@@ -64,7 +69,7 @@ func charge_jump() -> void:
 	if Input.is_action_pressed("charge_jump") and is_on_floor():
 		jump_progress.visible = true;
 		if jump_charged < 1:
-			jump_charged += 0.03;
+			jump_charged += 0.02;
 			jump_progress.value = jump_charged;
 	
 func animations() -> void:
@@ -85,22 +90,22 @@ func change_speed(direction:int) -> void:
 		sprite_2d.flip_h = false;
 		sprite_2d.position.x = 4;
 		if (speed < maxSpeed):
-			speed += speed_increment;
+			speed += speed_increment / 2;
 	elif direction == -1:
 		# incrase speed going left
 		sprite_2d.flip_h = true;
 		sprite_2d.position.x = -4;
 		
 		if (speed > -maxSpeed):
-			speed -= speed_increment;
+			speed -= speed_increment / 2;
 	elif direction == 0:
 		# If speed is positive, decrease speed until it reaches 0
 		if speed > 0:
-			speed -= speed_increment + 10
+			speed -= speed_increment * 2
 			if speed < 0:
 				speed = 0
 		# If speed is negative, increase speed until it reaches 0
 		elif speed < 0:
-			speed += speed_increment + 10
+			speed += speed_increment * 2
 			if speed > 0:
 				speed = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://6hst6nmvp8n0"]
+[gd_scene load_steps=18 format=3 uid="uid://6hst6nmvp8n0"]
 
 [ext_resource type="Script" path="res://Player/Movements.gd" id="1_4v363"]
 [ext_resource type="Texture2D" uid="uid://b436f3b40xn0e" path="res://Player/assets/_Idle.png" id="2_2yy2w"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b2kw7x27d0tgt" path="res://Player/assets/_Jump.png" id="4_408d3"]
 [ext_resource type="Texture2D" uid="uid://1eo6lbakynat" path="res://Player/assets/_Fall.png" id="5_o4nw0"]
 [ext_resource type="Texture2D" uid="uid://dq5l1nawy5o02" path="res://Player/assets/_CrouchFull.png" id="7_jxv8k"]
+[ext_resource type="AudioStream" uid="uid://2drndt8qaequ" path="res://Music/jump.wav" id="7_tadvl"]
+[ext_resource type="AudioStream" uid="uid://cddu2d8tauvm" path="res://Music/explosion.wav" id="8_k8u8o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_237i8"]
 bg_color = Color(0.00784314, 0.678431, 0, 1)
@@ -363,7 +365,7 @@ show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 ignore_rotation = false
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 rotation_smoothing_speed = 6.0
@@ -378,3 +380,11 @@ libraries = {
 "": SubResource("AnimationLibrary_6c2db")
 }
 autoplay = "idle"
+
+[node name="jumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_tadvl")
+volume_db = -18.262
+
+[node name="chargeJumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_k8u8o")
+volume_db = -17.387

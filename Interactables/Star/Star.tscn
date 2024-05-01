@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://l1k7062igfhd"]
+[gd_scene load_steps=9 format=3 uid="uid://l1k7062igfhd"]
 
 [ext_resource type="Texture2D" uid="uid://dtp7wb4nawigw" path="res://Interactables/Star/gem.png" id="1_31owh"]
 [ext_resource type="Script" path="res://Interactables/Star/Star.gd" id="1_vkvh4"]
 [ext_resource type="Texture2D" uid="uid://xw5slbparemp" path="res://Assets/Lights/light.png" id="2_4vnpw"]
+[ext_resource type="AudioStream" uid="uid://f7vwg7er4qmu" path="res://Music/coin.wav" id="4_c0wdx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbo04"]
 size = Vector2(14, 12)
@@ -143,4 +144,9 @@ energy = 0.6
 texture = ExtResource("2_4vnpw")
 texture_scale = 0.2
 
+[node name="collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_c0wdx")
+volume_db = -21.705
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="collect" to="." method="_on_collect_finished"]
