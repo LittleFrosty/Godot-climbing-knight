@@ -1,12 +1,9 @@
+res://NPC/Wizzard/Wizzard.tscn
 res://Interactables/Door/Door.gd
 res://Interactables/Star/Star.gd
-res://Platforms/BreakingBlocks/BreakingBlock.tscn
 res://Platforms/BreakingBlocks/BreakingBlock.gd
 res://Main.tscn
 res://Player/Player.tscn
 res://Interactables/Door/Door.tscn
-res://Interactables/Box/Box.tscn
-res://Platforms/MovingPlatform/MovingPlatform.tscn
-res://Player/UI.tscn
-res://Interactables/Star/Star.tscn
-res://Backgrounds/Forest/ForestBackground.tscn
+res://Platforms/BreakingBlocks/BreakingBlock.tscn
+res://NPC/Wizzard/Wizzard.gd
